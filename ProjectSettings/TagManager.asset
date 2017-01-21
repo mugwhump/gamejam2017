@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - BANANAAAAA
   - 
   - 
   - 
@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 3535594713
+    locked: 0
+  - name: tiles
+    uniqueID: 860713637
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: overlay
+    uniqueID: 4253154849
     locked: 0
