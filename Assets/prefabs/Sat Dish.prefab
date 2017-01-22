@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4218173464935632}
   - component: {fileID: 212937751115643722}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sat Dish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
