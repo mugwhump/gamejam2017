@@ -25,41 +25,47 @@ public class SpawnEmanators : MonoBehaviour {
     public void Spawn() {
         Vector3 startingPos = transform.position;
         if(radiate) {
-            emanateRadius(startingRate);
+            EmanateRadius(startingRate);
         }
         else {
             foreach(Direction dir in dirs) {
-                emanateLine(dir, startingRate);
+                EmanateLine(dir, startingRate);
             }
         }
     }
 
-    private void emanateLine(Direction dir, double rate) {
+    private void EmanateLine(Direction dir, double rate) {
         Vector2 pos = new Vector2(transform.position.x, transform.position.y);
-        emanateLine(dir, rate, pos, length);
+        EmanateLine(dir, rate, pos, length);
     }
 
-    private void emanateLine(Direction dir, double rate, Vector2 startPos, int newLength) {
+    private void EmanateLine(Direction dir, double rate, Vector2 startPos, int newLength) {
         double currentRate = startingRate;
-        for(int i=0; i< length; i++) {
+        for(int i=0; i< newLength; i++) {
             currentRate -= i * rateDecrease;
-            Vector2 pos = new Vector2(transform.position.x, transform.position.y) + Dir.toVec(dir);
-            Collider2D hit = Physics2D.OverlapPoint(pos, LayerMask.NameToLayer("Redirect Emanation"));
+            Vector2 newPos = startPos + Dir.toVec(dir) * i; //TODO make sure this actually works
+            Collider2D hit = Physics2D.OverlapPoint(newPos, LayerMask.NameToLayer("Redirect Emanation"));
             if(hit != null) {
                 RedirectEmanation redirect = hit.GetComponent<RedirectEmanation>();
                 foreach (Direction dir2 in redirect.dirs) {
                     double newRate = (redirect.keepRate) ? rate : redirect.rate;
-                    emanateLine(dir2, newRate);
+                    EmanateLine(dir2, newRate, newPos, redirect.length);
                 }
             }
-            else {
-                //instantiate emanator
+            else { //if didn't hit anything, create emanator
+                
             }
         }
     }
 
-    private void emanateRadius(double rate) {
+    private void EmanateRadius(double rate) {
 
+    }
+
+    private void SpawnEmanator(Vector2 pos) {
+        Vector3 pos3 = new Vector3(pos.x, pos.y, 0);
+        EmanateComplacency newEmanator = GameObject.Instantiate<EmanateComplacency>(emanator, transform);
+        newEmanator.transform.position = pos3;
     }
 
     // Update is called once per frame

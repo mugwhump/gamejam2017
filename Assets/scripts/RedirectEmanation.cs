@@ -7,6 +7,7 @@ using UnityEngine;
 //Mountains redirect emanations nowhere
 public class RedirectEmanation : MonoBehaviour {
     public Direction[] dirs; //which direction complacency emanators should be spawned
+    public int length; //how many tiles this goes for
     public double rate; //emanation rate.
     public bool keepRate; //if true just keeps the current rate (used for bends in rivers)
 
