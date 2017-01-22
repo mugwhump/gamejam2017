@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        newsMemes.SetActive(false);
+        newsMemes.SetActive(true);
 	}
 	
 	// Update is called once per frame
