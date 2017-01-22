@@ -17,6 +17,9 @@ public class EmanateComplacency : MonoBehaviour {
 	}
 
     void OnTriggerStay2D(Collider2D other) {
-
+        Complacency target = other.GetComponent<Complacency>();
+        if (target) {
+            Debug.Log("COMPLACIFIED");
+        }
     }
 }
