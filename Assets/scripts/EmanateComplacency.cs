@@ -20,6 +20,8 @@ public class EmanateComplacency : MonoBehaviour {
         Complacency target = other.GetComponent<Complacency>();
         if (target) {
             Debug.Log("COMPLACIFIED");
+        } else {
+            Debug.Log("NOT COMPLACIFIED");
         }
     }
 }
