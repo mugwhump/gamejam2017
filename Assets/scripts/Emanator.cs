@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Increases complacency of whatever collides with this object
-public class EmanateComplacency : MonoBehaviour {
+public class Emanator : MonoBehaviour {
     public double rate; //complacency gained per second
+    public Conspiracy type; //is this waves, fluoride, or chemtrails
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +20,7 @@ public class EmanateComplacency : MonoBehaviour {
     void OnTriggerStay2D(Collider2D other) {
         Complacency target = other.GetComponent<Complacency>();
         if (target) {
-            target.complacency += rate * Time.deltaTime;
+            target.Placate(rate * Time.deltaTime, type);
         } 
     }
 }

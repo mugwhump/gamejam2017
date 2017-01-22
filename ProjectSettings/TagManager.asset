@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Dish
+  - Canvas
   layers:
   - Default
   - TransparentFX
@@ -13,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - BANANAAAAA
-  - 
-  - 
+  - Redirect Emanation
+  - Mountains
+  - Emanator
   - 
   - 
   - 
@@ -43,6 +45,9 @@ TagManager:
     locked: 0
   - name: tiles
     uniqueID: 860713637
+    locked: 0
+  - name: structures
+    uniqueID: 1158679383
     locked: 0
   - name: Default
     uniqueID: 0

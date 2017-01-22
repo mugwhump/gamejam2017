@@ -20,9 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4218173464935632}
   - component: {fileID: 212937751115643722}
-  m_Layer: 0
+  - component: {fileID: 114125915186241720}
+  - component: {fileID: 61742685128913744}
+  m_Layer: 8
   m_Name: Sat Dish
-  m_TagString: Untagged
+  m_TagString: Dish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,12 +36,41 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1215924756907354}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.504273, y: 3.5205555, z: 0}
+  m_LocalPosition: {x: 10.5, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61742685128913744
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1215924756907354}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.72, y: 0.68}
+--- !u!114 &114125915186241720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1215924756907354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32f53c791f29df488f525ccaaa5a1ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirs: 00000000
+  length: 3
+  rate: 2
+  keepRate: 0
 --- !u!212 &212937751115643722
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -69,7 +100,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1158679383
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ece32abbb0767db4d858c7c31c4845da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
