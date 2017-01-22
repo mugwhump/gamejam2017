@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Increases complacency of whatever collides with this object
-public class EmanateComplacency : MonoBehaviour {
+public class Emanator : MonoBehaviour {
     public double rate; //complacency gained per second
 
 	// Use this for initialization
