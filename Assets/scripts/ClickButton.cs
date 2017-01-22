@@ -7,6 +7,8 @@ public class ClickButton : MonoBehaviour {
     public GameObject product; //what this button creates
     public int cost; //how much it costs
     public double cooldown; //how long is the cooldown in seconds
+    public bool rotateable = false; //whether object can be rotated
+    public Direction dir = Direction.RIGHT; //direction that matches the unrotated sprite
 
     private Button mButton;
     private GameManager gm;
