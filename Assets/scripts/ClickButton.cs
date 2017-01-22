@@ -45,7 +45,21 @@ public class ClickButton : MonoBehaviour {
     }
 
     public void TaskOnSecondClick() {
+        Debug.Log("Click2");
         gm.money -= cost;
         remainingTime = cooldown;
+        if (rotateable) {
+            Plane plane = product.GetComponent<Plane>();
+            //Debug.Log("Spawner is " + spawner.ToString());
+            if (plane != null) {
+                plane.payload.dirs = new Direction[1] { dir };
+                Debug.Log("Facing " + plane.payload.dirs.ToString());
+            }
+            RedirectEmanation redirector = product.GetComponent<RedirectEmanation>();
+            if (redirector != null) {
+                redirector.dirs = new Direction[1] { dir };
+                Debug.Log("Facing " + redirector.dirs.ToString());
+            }
+        }
     }
 }
