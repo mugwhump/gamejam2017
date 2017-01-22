@@ -35,9 +35,26 @@ public class SpawnEmanators : MonoBehaviour {
     }
 
     private void emanateLine(Direction dir, double rate) {
+        Vector2 pos = new Vector2(transform.position.x, transform.position.y);
+        emanateLine(dir, rate, pos, length);
+    }
+
+    private void emanateLine(Direction dir, double rate, Vector2 startPos, int newLength) {
         double currentRate = startingRate;
         for(int i=0; i< length; i++) {
-            currentRate -= i * ()
+            currentRate -= i * rateDecrease;
+            Vector2 pos = new Vector2(transform.position.x, transform.position.y) + Dir.toVec(dir);
+            Collider2D hit = Physics2D.OverlapPoint(pos, LayerMask.NameToLayer("Redirect Emanation"));
+            if(hit != null) {
+                RedirectEmanation redirect = hit.GetComponent<RedirectEmanation>();
+                foreach (Direction dir2 in redirect.dirs) {
+                    double newRate = (redirect.keepRate) ? rate : redirect.rate;
+                    emanateLine(dir2, newRate);
+                }
+            }
+            else {
+                //instantiate emanator
+            }
         }
     }
 

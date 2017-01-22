@@ -26,13 +26,13 @@ public static class Dir {
 
     public static UnityEngine.Vector2 toVec(Direction dir) {
         switch (dir) {
-            case Direction.UP: return new UnityEngine.Vector2(;
-            case Direction.RIGHT: return Direction.DOWN;
-            case Direction.DOWN: return Direction.LEFT;
-            case Direction.LEFT: return Direction.UP;
+            case Direction.UP: return new UnityEngine.Vector2(0, 1);
+            case Direction.RIGHT: return new UnityEngine.Vector2(1, 0);
+            case Direction.DOWN: return new UnityEngine.Vector2(0, -1);
+            case Direction.LEFT: return new UnityEngine.Vector2(-1, 0);
             case Direction.NONE:
             default:
-                return Direction.NONE;
+                return new UnityEngine.Vector2(0, 0);
         }
     }
 }
