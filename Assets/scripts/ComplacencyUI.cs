@@ -10,7 +10,7 @@ public class ComplacencyUI : MonoBehaviour {
     public GameObject complacencyPrefab; //complacency bar prefab. Will be instantiated for everyone that needs it.
 
     public float complacencyPanelOffset = 0.35f; //how high (world space coords) above subject the panel should appear
-    public GameObject complacencyPanel; //instantiation of complacencyPrefab
+    private GameObject complacencyPanel; //instantiation of complacencyPrefab
     private Slider complacencySlider;
     // Use this for initialization
     void Start () {
@@ -28,5 +28,9 @@ public class ComplacencyUI : MonoBehaviour {
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         complacencyPanel.transform.position = new Vector3(screenPos.x, screenPos.y, screenPos.z);
         //complacencyPanel.transform.position = new Vector3(transform.position.x, transform.position.y + complacencyPanelOffset, transform.position.z);
+    }
+
+    void OnDestroy () {
+        Destroy(complacencyPanel);
     }
 }

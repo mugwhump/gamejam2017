@@ -9,6 +9,7 @@ public class SpawnEmanators : MonoBehaviour {
     public Emanator emanator;
     //TODO: determine river direction
     //TODO: stop dishes from getting redirected by river turns. add enum for things that can redirect
+    public Conspiracy type;
     public Direction[] dirs; //which direction complacency emanators should be spawned
     public bool radiate = false; //if true, radiates in a circle around point, ignoring dirs variable
     public double startingRate; //emanation rate at origin. 
@@ -105,6 +106,7 @@ public class SpawnEmanators : MonoBehaviour {
         Emanator newEmanator = GameObject.Instantiate<Emanator>(emanator, transform);
         newEmanator.transform.position = pos3;
         newEmanator.rate = rate;
+        newEmanator.type = type;
     }
 
     // Update is called once per frame
