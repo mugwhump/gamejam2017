@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4031095499413046}
   - component: {fileID: 212586998776101580}
+  - component: {fileID: 114840126586965076}
   m_Layer: 0
   m_Name: Flouride Factory
   m_TagString: Untagged
@@ -34,12 +35,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1767304138783212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4614646, y: 3.4515777, z: 0}
+  m_LocalPosition: {x: 12.46, y: 3.4515777, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114840126586965076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767304138783212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3b6a686d9fa47146b2957193936884a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emanator: {fileID: 0}
+  dirs: 03000000
+  radiate: 0
+  startingRate: 1
+  length: 5
+  constantRate: 0
 --- !u!212 &212586998776101580
 SpriteRenderer:
   m_ObjectHideFlags: 1

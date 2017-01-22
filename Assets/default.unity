@@ -1462,6 +1462,7 @@ Transform:
   m_Children:
   - {fileID: 1991430526}
   - {fileID: 1390272628}
+  - {fileID: 1783525980}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1533,6 +1534,57 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1765764632}
+--- !u!1001 &1783525979
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1558010706}
+    m_Modifications:
+    - target: {fileID: 4031095499413046, guid: fe3c4323bb18b4446a6082010ae3e519, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031095499413046, guid: fe3c4323bb18b4446a6082010ae3e519, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.4515777
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031095499413046, guid: fe3c4323bb18b4446a6082010ae3e519, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031095499413046, guid: fe3c4323bb18b4446a6082010ae3e519, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031095499413046, guid: fe3c4323bb18b4446a6082010ae3e519, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031095499413046, guid: fe3c4323bb18b4446a6082010ae3e519, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031095499413046, guid: fe3c4323bb18b4446a6082010ae3e519, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031095499413046, guid: fe3c4323bb18b4446a6082010ae3e519, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767304138783212, guid: fe3c4323bb18b4446a6082010ae3e519, type: 2}
+      propertyPath: m_Name
+      value: Flouride Factory (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: fe3c4323bb18b4446a6082010ae3e519, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1783525980 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4031095499413046, guid: fe3c4323bb18b4446a6082010ae3e519,
+    type: 2}
+  m_PrefabInternal: {fileID: 1783525979}
 --- !u!1001 &1991430525
 Prefab:
   m_ObjectHideFlags: 0

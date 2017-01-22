@@ -19,8 +19,12 @@ public class SpawnEmanators : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rateDecrease = startingRate / length;
-        Spawn();
-	}
+        //Spawn();
+        GameObject dish = GameObject.FindGameObjectWithTag("Finish");
+        Collider2D hit = Physics2D.OverlapPoint(dish.transform.position);//, LayerMask.NameToLayer("Redirect Emanation"));
+        RedirectEmanation redirect = hit.GetComponent<RedirectEmanation>();
+        Debug.Log(redirect.ToString());
+    }
 
     public void Spawn() {
         Vector3 startingPos = transform.position;
@@ -45,8 +49,8 @@ public class SpawnEmanators : MonoBehaviour {
             currentRate -= i * rateDecrease;
             Vector2 newPos = startPos + Dir.toVec(dir) * i; //TODO make sure this actually works
             Debug.Log("Checking " + newPos.ToString());
-            Collider2D hit = Physics2D.OverlapPoint(newPos);//, LayerMask.NameToLayer("Redirect Emanation"));
-            if(hit != null) {
+            Collider2D hit = Physics2D.OverlapPoint(newPos, LayerMask.NameToLayer("Redirect Emanation"));
+            if(i > 0 && hit != null) {
                 Debug.Log("HIT SOMEFIN AT"+hit.ToString());
                 RedirectEmanation redirect = hit.GetComponent<RedirectEmanation>();
                 foreach (Direction dir2 in redirect.dirs) {
@@ -58,7 +62,7 @@ public class SpawnEmanators : MonoBehaviour {
                 }
             }
             else { //if didn't hit anything, create emanator
-                //SpawnEmanator(newPos);
+                SpawnEmanator(newPos);
             }
         }
     }
