@@ -922,8 +922,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   product: {fileID: 1585814422179364, guid: 57d9605db728bbb4f85417fc74c10271, type: 2}
-  cost: 300
-  cooldown: 25
+  cost: 0
+  cooldown: 0
   rotateable: 1
   dir: 1
 --- !u!4 &582575256 stripped

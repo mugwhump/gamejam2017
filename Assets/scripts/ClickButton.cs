@@ -8,7 +8,8 @@ public class ClickButton : MonoBehaviour {
     public int cost; //how much it costs
     public double cooldown; //how long is the cooldown in seconds
     public bool rotateable = false; //whether object can be rotated
-    public Direction dir = Direction.RIGHT; //direction that matches the unrotated sprite
+    public Direction startingDir = Direction.RIGHT; //direction that matches the unrotated sprite
+    public Direction dir;
 
     private Button mButton;
     private GameManager gm;
@@ -38,6 +39,7 @@ public class ClickButton : MonoBehaviour {
         }
         else {
             //charge them once they actually build it
+            dir = startingDir;
             GameObject prod = Instantiate(product);
             ButtonProduct bp = prod.AddComponent<ButtonProduct>();
             bp.caller = this;
@@ -52,8 +54,8 @@ public class ClickButton : MonoBehaviour {
             Plane plane = product.GetComponent<Plane>();
             //Debug.Log("Spawner is " + spawner.ToString());
             if (plane != null) {
-                plane.payload.dirs = new Direction[1] { dir };
-                Debug.Log("Facing " + plane.payload.dirs.ToString());
+                plane.SetDir(dir);
+                //Debug.Log("Facing " + plane.payload.dirs.ToString());
             }
             RedirectEmanation redirector = product.GetComponent<RedirectEmanation>();
             if (redirector != null) {

@@ -91,6 +91,7 @@ MonoBehaviour:
   target: {x: 0, y: 0}
   flightSpeed: 2
   payload: {fileID: 114531113622400616, guid: b5ab1008801296448874c8f288c6ed50, type: 2}
+  dir: 1
 --- !u!212 &212077448980882518
 SpriteRenderer:
   m_ObjectHideFlags: 1

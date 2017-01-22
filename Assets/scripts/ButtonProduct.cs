@@ -29,17 +29,14 @@ public class ButtonProduct : MonoBehaviour {
         float y = Mathf.Round(pos.y + .5f) - .5f;
         transform.position = new Vector3(x, y, 0);
         if (Input.GetMouseButtonDown(0)) {
-            Debug.Log("Placed product at "+pos.ToString());
             Reenable();
             caller.TaskOnSecondClick();
             Destroy(this);
         }
         if (caller.rotateable && Input.GetMouseButtonDown(1)) {
-            Debug.Log("SPIN 2 WIN");
-            caller.dir = Dir.getClockwise(caller.dir);
-            //Quaternion rot = transform.rotation;
-            //transform.rotation = new Quaternion(0, 0, rot.z + 90f, rot.w);
-            transform.Rotate(Vector3.forward * -90);
+            caller.dir = Dir.getCounterClockwise(caller.dir);
+            Debug.Log(caller.dir.ToString());
+            transform.Rotate(Vector3.forward * 90);
         }
     }
 
