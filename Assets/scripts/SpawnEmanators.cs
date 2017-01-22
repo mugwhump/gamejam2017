@@ -69,6 +69,7 @@ public class SpawnEmanators : MonoBehaviour {
                 float dist = Vector2.Distance(vec, thisVec);
                 if(dist <= length/2) {
                     RaycastHit2D hit = Physics2D.Linecast(thisVec, vec, 1 << LayerMask.NameToLayer("Mountains"));
+                    //TODO: could use this linecast as a path for wave graphics to follow
                     if(hit.collider == null) { //no mountains in the way
                         double currentRate = rate - dist * rateDecrease;
                         SpawnEmanator(vec, currentRate);
