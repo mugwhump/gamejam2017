@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Complacency : MonoBehaviour {
     public double maxComplacency;
-    public double startingComplacency;
+    public double complacency;
 
 	// Use this for initialization
 	void Start () {
